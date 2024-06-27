@@ -3,7 +3,6 @@ package dev.esternit.runnerz.run;
 import com.fasterxml.jackson.core.type.TypeReference;
 import org.slf4j.Logger;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import dev.esternit.runnerz.run.Run;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
@@ -16,9 +15,9 @@ public class RunJsonDataLoader implements CommandLineRunner {
 
     private static final Logger log = LoggerFactory.getLogger(RunJsonDataLoader.class);
     private final ObjectMapper objectMapper;
-    private final RunRepository runRepository;
+    private final JdbcClientRunRepository runRepository;
 
-    public RunJsonDataLoader(ObjectMapper objectMapper, RunRepository runRepository) {
+    public RunJsonDataLoader(ObjectMapper objectMapper, JdbcClientRunRepository runRepository) {
         this.runRepository = runRepository;
         this.objectMapper = objectMapper;
     }
