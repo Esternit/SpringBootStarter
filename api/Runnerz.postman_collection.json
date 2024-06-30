@@ -134,7 +134,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"username\": \"ester\",\r\n    \"password\": \"54321\",\r\n    \"role\": \"ADMIN,USER\"\r\n}",
+					"raw": "{\r\n    \"username\": \"ester\",\r\n    \"password\": \"54321\",\r\n    \"role\": \"ADMIN,USER\",\r\n    \"email\": \"somemail\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -151,6 +151,25 @@
 					"path": [
 						"register",
 						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getUsers",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/findAllUsers",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"findAllUsers"
 					]
 				}
 			},
