@@ -32,7 +32,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8080/api/runs/2",
+					"raw": "http://localhost:8080/api/runs/1",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -41,7 +41,7 @@
 					"path": [
 						"api",
 						"runs",
-						"2"
+						"1"
 					]
 				}
 			},
@@ -54,7 +54,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"id\": 4,\n    \"title\": \"Wednesday Afternoon Run\",\n    \"startTime\": \"2022-12-12T15:00:12.49766\",\n    \"endTime\": \"2022-12-12T15:20:12.497678\",\n    \"miles\": 2,\n    \"location\": \"INDOOR\"\n}",
+					"raw": "{\n    \"id\": 4,\n    \"title\": \"SomeTitle\",\n    \"startTime\": \"2022-12-12T15:00:12.49766\",\n    \"endTime\": \"2022-12-12T15:20:12.497678\",\n    \"miles\": 2,\n    \"location\": \"INDOOR\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -83,7 +83,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"id\": 2,\n    \"title\": \"Wednesday Afternoon Run!!!\",\n    \"startTime\": \"2022-12-12T15:00:12.49766\",\n    \"endTime\": \"2022-12-12T15:20:12.497678\",\n    \"miles\": 999,\n    \"location\": \"INDOOR\"\n}",
+					"raw": "{\n    \"id\": 4,\n    \"title\": \"Wednesday Afternoon Run!!!\",\n    \"startTime\": \"2022-12-12T15:00:12.49766\",\n    \"endTime\": \"2022-12-12T15:20:12.497678\",\n    \"miles\": 999,\n    \"location\": \"INDOOR\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -91,7 +91,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8080/api/runs/2",
+					"raw": "http://localhost:8080/api/runs/4",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -100,7 +100,7 @@
 					"path": [
 						"api",
 						"runs",
-						"2"
+						"4"
 					]
 				}
 			},
@@ -122,6 +122,35 @@
 						"api",
 						"runs",
 						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "createUser",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"ester\",\r\n    \"password\": \"54321\",\r\n    \"role\": \"ADMIN,USER\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/register/user",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"register",
+						"user"
 					]
 				}
 			},
