@@ -20,6 +20,9 @@ public class MyUser {
         @NotNull
         @NotEmpty
         String email;
+        String phone;
+        String address;
+        String contactInfo;
         @Version
         Integer version;
 

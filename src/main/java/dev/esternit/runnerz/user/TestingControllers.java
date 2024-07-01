@@ -14,7 +14,6 @@ public class TestingControllers {
 
     @GetMapping("/findAllUsers")
     public List<MyUser> findAllUsers() {
-        System.out.println("finding all users");
         return userRepository.findAll();
     }
 }
