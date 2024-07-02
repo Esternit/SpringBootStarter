@@ -223,7 +223,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"address\": \"russia\"\r\n}",
+					"raw": "{\r\n    \"address\": \"russia\",\r\n    \"customerId\": \"8f4defb6-c908-4f13-865f-aa3e9e93548c\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -240,6 +240,76 @@
 					"path": [
 						"api",
 						"orders"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "addItem",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"productId\": \"7a2ee764-c6da-446b-9acb-d8d0af8efa60\",\r\n    \"productLocation\": \"EU\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/cart",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"cart"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getCartItems",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/cart",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"cart"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getAllOrderedItems",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/orders/items",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"orders",
+						"items"
 					]
 				}
 			},

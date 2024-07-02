@@ -28,12 +28,19 @@ public class SecurityConfiguration {
     @Autowired
     private MyUserDetailService myUserDetailService;
 
+
+    /**
+     * TODO
+     * Move everything with /api to user or admin permissions
+     * Move /createOrder to user
+     * Remove findAllUsers
+     */
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity httpSecurity) throws Exception {
         return httpSecurity
                 .csrf(AbstractHttpConfigurer::disable)
                 .authorizeHttpRequests(registry -> {
-                    registry.requestMatchers("/home", "/register/**", "/findAllUsers", "/static/**", "/api/orders/**", "/createOrder").permitAll();
+                    registry.requestMatchers("/home", "/register/**", "/findAllUsers", "/static/**", "/api/orders/**", "/createOrder", "/api/cart/**").permitAll();
                     registry.requestMatchers("/admin/**").hasRole("ADMIN");
                     registry.requestMatchers("/user/**", "/api/runs/**").hasRole("USER");
                     registry.anyRequest().authenticated();

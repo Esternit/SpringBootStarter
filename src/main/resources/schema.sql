@@ -1,5 +1,8 @@
 DROP TABLE IF EXISTS Run;
 
+
+
+--TODO remove all drops
 CREATE TABLE IF NOT EXISTS Run (
    id INT NOT NULL,
    title varchar(250) NOT NULL,
@@ -78,31 +81,24 @@ CREATE TABLE IF NOT EXISTS Orders (
     version INT
 );
 
-CREATE TABLE IF NOT EXISTS Ordered_Products (
-    id INT PRIMARY KEY,
-    order_id INT,
+DROP TABLE IF EXISTS ordered_products;
+
+CREATE TABLE IF NOT EXISTS ordered_products (
+    id UUID PRIMARY KEY,
+    order_id UUID,
     product_status VARCHAR(50),
-    product_id_ru INT,
-    product_id_eu INT,
-    tracking_number VARCHAR(100),
+    product_id UUID,
+    product_location VARCHAR(25),
+    tracking_number VARCHAR(250),
     version INT
 );
 
-CREATE TABLE IF NOT EXISTS Customers (
-    id INT PRIMARY KEY,
-    system_id VARCHAR(100),
-    password VARCHAR(255),
-    phone VARCHAR(50),
-    address VARCHAR(255),
-    location_eu_ru VARCHAR(10),
-    email VARCHAR(100),
-    contact_info VARCHAR(255),
-    orders INT,
-    version INT
-);
+--DROP TABLE IF EXISTS cart_item;
 
-CREATE TABLE IF NOT EXISTS CartItem (
-    id INT PRIMARY KEY,
-    product_id INT,
+CREATE TABLE IF NOT EXISTS cart_item (
+    id UUID PRIMARY KEY,
+    user_id UUID,
+    product_id UUID,
+    product_location VARCHAR(25),
     version INT
 );
