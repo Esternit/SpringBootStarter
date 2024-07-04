@@ -18,6 +18,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -51,8 +52,8 @@ public class ContentController {
         return "home_admin";
     }
 
-    @GetMapping("/product/{slug}")
-    public String handleProduct() {
+    @GetMapping("/product_detail")
+    public String handleProduct(@RequestParam(name = "slug") String slug) {
         return "product_detail";
     }
 

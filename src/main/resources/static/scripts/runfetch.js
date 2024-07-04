@@ -25,7 +25,7 @@ function loadHTMLTABLE(data){
     data.forEach(product => {
         prod.innerHTML += `
             <div class="product">
-                <a href='/product/${product["slug"]}'>
+                <a href='/product_detail?slug=${product["slug"]}'>
                     <img src='${product["mainPhoto"]}' alt="Product">
                     <h3>${product["name"]}</h3>
                     <p class="price">${product["costPriceInRubles"]} ₽</p>
