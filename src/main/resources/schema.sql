@@ -47,25 +47,42 @@ CREATE TABLE IF NOT EXISTS Products_EU (
    version INT
 );
 
-CREATE TABLE IF NOT EXISTS Products_RU (
-    id INT PRIMARY KEY,
-    source_url VARCHAR(255),
+DROP TABLE IF EXISTS products_ru;
+
+CREATE TABLE IF NOT EXISTS products_ru (
+    id UUID PRIMARY KEY,
+    source_url TEXT,
     name VARCHAR(255),
     product_type VARCHAR(100),
     size VARCHAR(50),
     color VARCHAR(50),
     weight DOUBLE PRECISION,
     purchase_price DOUBLE PRECISION,
+    tax DOUBLE PRECISION,
     delivery_price_NP DOUBLE PRECISION,
-    delivery_price_R5 DOUBLE PRECISION,
-    customer_delivery_price DOUBLE PRECISION,
-    packaging DOUBLE PRECISION,
-    additional_expense_1 DOUBLE PRECISION,
-    additional_expense_2 DOUBLE PRECISION,
+    delivery_price_RB DOUBLE PRECISION,
+    delivery_price_RU DOUBLE PRECISION,
+    packaging1 DOUBLE PRECISION,
+    packaging2 DOUBLE PRECISION,
+    additional_expense DOUBLE PRECISION,
     cost_price DOUBLE PRECISION,
     cost_price_in_rubles DOUBLE PRECISION,
     selling_price_in_rubles DOUBLE PRECISION,
     net_profit DOUBLE PRECISION,
+    slug VARCHAR(255),
+    main_photo TEXT,
+    version INT
+);
+
+DROP TABLE IF EXISTS images;
+
+CREATE TABLE IF NOT EXISTS images (
+    id UUID PRIMARY KEY,
+    url TEXT,
+    product_id UUID,
+    width INT,
+    height INT,
+    slug VARCHAR(255),
     version INT
 );
 

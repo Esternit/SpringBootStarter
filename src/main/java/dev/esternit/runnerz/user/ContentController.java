@@ -2,6 +2,8 @@ package dev.esternit.runnerz.user;
 
 
 import dev.esternit.runnerz.orders.OrdersController;
+import dev.esternit.runnerz.products.ProductRU;
+import dev.esternit.runnerz.products.ProductRURepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,9 +33,15 @@ public class ContentController {
 
     @Autowired
     MyUserRepository MyUserRepository;
+    @Autowired
+    ProductRURepository productRURepository;
 
     @GetMapping("/home")
-    public String handleWelcome() {;
+    public String handleWelcome(Model model) {
+        List<ProductRU> products = productRURepository.findAll();
+
+        model.addAttribute("products", products);
+
         return "home";
     }
 
