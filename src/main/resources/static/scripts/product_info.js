@@ -2,8 +2,8 @@ let currentSlide = 0;
 let param = new URLSearchParams(window.location.search);
 
 const slug = param.get('slug');
-const api1 = `http://localhost:8080/api/products/${slug}`;
-const api2 = `http://localhost:8080/api/products/images/${slug}`;
+const api1 = `/api/products/${slug}`;
+const api2 = `/api/products/images/${slug}`;
 
 Promise.all([
   fetch(api1, {
