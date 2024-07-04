@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Page</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="product-page">
+    <div class="carousel">
+        <div class="carousel-inner">
+            <img src="product1.jpg" alt="Product Image 1" class="carousel-item active">
+            <img src="product2.jpg" alt="Product Image 2" class="carousel-item">
+            <img src="product3.jpg" alt="Product Image 3" class="carousel-item">
+        </div>
+        <button class="carousel-control prev" onclick="prevSlide()">&#10094;</button>
+        <button class="carousel-control next" onclick="nextSlide()">&#10095;</button>
+    </div>
+    <div class="product-details">
+        <h1 class="product-name">Product Name</h1>
+        <p class="product-price">$300</p>
+        <p class="product-description">This is a detailed description of the product. It includes all the features, benefits, and other important information that the customer should know before making a purchase.</p>
+    </div>
+</div>
+
+<script src="../static/scripts/product_info.js"></script>
+</body>
+</html>

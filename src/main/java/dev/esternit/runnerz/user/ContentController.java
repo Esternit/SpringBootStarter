@@ -51,6 +51,11 @@ public class ContentController {
         return "home_admin";
     }
 
+    @GetMapping("/product/{slug}")
+    public String handleProduct() {
+        return "product_detail";
+    }
+
     @GetMapping("/user/home")
     public String handleUserHome(Model model) {
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();

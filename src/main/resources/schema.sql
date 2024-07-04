@@ -71,6 +71,7 @@ CREATE TABLE IF NOT EXISTS products_ru (
     net_profit DOUBLE PRECISION,
     slug VARCHAR(255),
     main_photo TEXT,
+    description TEXT,
     version INT
 );
 

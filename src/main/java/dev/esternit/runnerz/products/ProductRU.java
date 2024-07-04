@@ -35,6 +35,7 @@ public class ProductRU {
     private Double netProfit;
     private String slug;
     private String mainPhoto;
+    private String description;
 
     @Version
     private Integer version;
@@ -115,6 +116,10 @@ public class ProductRU {
 
     public Double getDeliveryPriceNP() {
         return deliveryPriceNP;
+    }
+
+    public String getDescription() {
+        return description;
     }
 
     public void setDeliveryPriceNP(Double deliveryPriceNP) {
